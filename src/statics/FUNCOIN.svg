@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="Logo"
+   viewBox="0 0 208.92 208.91999"
+   version="1.1"
+   sodipodi:docname="FUNCOIN.svg"
+   width="208.92"
+   height="208.92"
+   inkscape:export-filename="C:\Users\ssgkv\OneDrive\Desktop\quasar projects\Funcoin Wallet\src\app-splashscreen.png"
+   inkscape:export-xdpi="1119.3567"
+   inkscape:export-ydpi="1119.3567"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata47">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>FUNCOIN</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview45"
+     showgrid="false"
+     inkscape:zoom="1.2072228"
+     inkscape:cx="104.46"
+     inkscape:cy="26.925831"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Logo" />
+  <defs
+     id="defs4">
+    <style
+       id="style2">.cls-1{fill:#2484c6;}.cls-2{fill:#1a6497;}.cls-3{fill:#a23f97;}.cls-4{fill:#7b2972;}.cls-5{fill:#ef4056;}.cls-6{fill:#b22c3e;}.cls-7{fill:#ffc20e;}.cls-8{fill:#e39717;}.cls-9{fill:#8dc63f;}.cls-10{fill:#66952e;}.cls-11{fill:#00b6be;}.cls-12{fill:#007c81;}.cls-13{fill:#8e3484;}.cls-14{fill:#2073ae;}.cls-15{fill:#00a0a6;}.cls-16{fill:#79ad36;}.cls-17{fill:#eca516;}.cls-18{fill:#cf364a;}</style>
+  </defs>
+  <title
+     id="title6">FUNCOIN</title>
+  <polygon
+     class="cls-1"
+     points="169.3,180.93 208.92,112.3 190.19,101.49 171.31,112.39 183.13,119.21 162.39,155.14 104.46,121.7 90.2,129.93 90.2,151.73 104.46,143.5 "
+     id="polygon8"
+     style="fill:#2484c6"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-2"
+     points="90.2,129.93 90.2,151.73 104.46,143.5 104.46,121.7 "
+     id="polygon10"
+     style="fill:#1a6497"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-3"
+     points="144.08,195.49 144.08,173.86 125.2,162.96 125.2,176.61 83.72,176.61 83.72,109.72 69.45,101.49 50.58,112.39 64.84,120.62 64.84,195.49 "
+     id="polygon12"
+     style="fill:#a23f97"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-4"
+     points="50.58,112.39 64.84,120.62 83.72,109.72 69.45,101.49 "
+     id="polygon14"
+     style="fill:#7b2972"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-5"
+     points="64.84,74.87 0,112.3 39.62,180.93 58.36,170.11 58.36,148.32 46.53,155.14 25.79,119.21 83.72,85.77 83.72,69.3 64.84,58.4 "
+     id="polygon16"
+     style="fill:#ef4056"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-6"
+     points="64.84,58.4 64.84,74.87 83.72,85.77 83.72,69.3 "
+     id="polygon18"
+     style="fill:#b22c3e"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-7"
+     points="39.62,14.56 0,83.19 18.73,94 37.61,83.1 25.79,76.28 46.53,40.35 104.46,73.79 118.72,65.56 118.72,43.76 104.46,51.99 "
+     id="polygon20"
+     style="fill:#ffc20e"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-8"
+     points="118.72,43.76 104.46,51.99 104.46,73.79 118.72,65.56 "
+     id="polygon22"
+     style="fill:#e39717"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-9"
+     points="64.84,0 64.84,21.63 83.72,32.53 83.72,18.88 125.2,18.88 125.2,85.77 139.47,94 158.34,83.1 144.08,74.87 144.08,0 "
+     id="polygon24"
+     style="fill:#8dc63f"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-10"
+     points="158.34,83.1 144.08,74.87 125.2,85.77 139.47,94 "
+     id="polygon26"
+     style="fill:#66952e"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-11"
+     points="144.08,120.62 208.92,83.19 169.3,14.56 150.56,25.38 150.56,47.17 162.39,40.35 183.13,76.28 125.2,109.72 125.2,126.19 144.08,137.09 "
+     id="polygon28"
+     style="fill:#00b6be"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-12"
+     points="125.2,126.19 144.08,137.09 144.08,120.62 125.2,109.72 "
+     id="polygon30"
+     style="fill:#007c81"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-13"
+     points="125.2,162.96 125.2,170.42 144.08,181.32 144.08,173.86 "
+     id="polygon32"
+     style="fill:#8e3484"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-14"
+     points="171.31,112.39 177.77,116.12 196.65,105.22 190.19,101.49 "
+     id="polygon34"
+     style="fill:#2073ae"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-15"
+     points="150.56,47.17 157.03,43.44 157.03,21.64 150.56,25.38 "
+     id="polygon36"
+     style="fill:#00a0a6"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-16"
+     points="83.72,32.53 83.72,25.07 64.84,14.17 64.84,21.63 "
+     id="polygon38"
+     style="fill:#79ad36"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-17"
+     points="37.61,83.1 31.15,79.37 12.27,90.27 18.73,94 "
+     id="polygon40"
+     style="fill:#eca516"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+  <polygon
+     class="cls-18"
+     points="58.36,148.32 51.89,152.05 51.89,173.84 58.36,170.11 "
+     id="polygon42"
+     style="fill:#cf364a"
+     transform="matrix(1,0,0,1.0042373,0,6.8032152)" />
+</svg>
