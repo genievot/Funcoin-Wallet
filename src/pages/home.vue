@@ -32,7 +32,7 @@
         lazy-rules
         :rules="[
           val => val !== null && val !== '' || 'Please type something',
-          val => val >= 0.001 || 'Please keep atleast 0.01 as Amount',
+          val => val >= 0.001 || 'Please keep atleast 0.001 as Amount',
           val => val <= this.getDynBalance || 'That much Amount is not available'
         ]"
       />
@@ -291,7 +291,7 @@ export default {
       p3cBalance: '',
       p3cBalanceInEtc: '',
       p3cBalanceInUsd: '',
-      etcBalance: '',
+      etcBalance: '0.000',
       p3cDividends: '',
       valueToSpend: '0.01',
       walletSaved: null,
@@ -436,7 +436,7 @@ export default {
       this.$etcProvider.getBalance(this.address).then((balance) => {
         // balance is a BigNumber (in wei); format is as a sting (in ether)
         let etherString = this.$ethers.utils.formatEther(balance)
-        this.etcBalance = parseFloat(etherString).toFixed(3).toString()
+        this.etcBalance = parseFloat(etherString).toFixed(4).toString()
         this.$q.loading.hide()
         // console.log(this.etcBalance)
       })

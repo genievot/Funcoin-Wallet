@@ -14,7 +14,7 @@
    <q-card>
      <q-card-section class="row items-center justify-center">
        <q-avatar icon="account_circle" color="primary" text-color="white" />
-       <span class="q-ml-sm">Click Private Key to add your ETC Wallet private key to this wallet.</span>
+       <span class="q-ml-sm">Click Private Key to add your FUNCOIN Wallet private key to this wallet.</span>
      </q-card-section>
 
      <q-card-actions align="right">
@@ -26,7 +26,7 @@
  <q-dialog v-model="insertPrivateKeyDialog" persistent>
   <q-card style="min-width: 300px">
     <q-card-section>
-      <div class="text-h6">Your Private Key of Existing ETC Wallet.</div>
+      <div class="text-h6">Your Private Key of Existing FUNCOIN Wallet.</div>
     </q-card-section>
     <q-form
         @submit="keyAdded"

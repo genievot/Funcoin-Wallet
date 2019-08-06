@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Funcoin Wallet For Cross Platform",
   "productName": "Funcoin Wallet",
-  "cordovaId": "com.jaeven.p3cwallet",
+  "cordovaId": "com.jaeven.funcWallet",
   "author": "Genievot <40867747+genievot@users.noreply.github.com>",
   "private": true,
   "scripts": {
