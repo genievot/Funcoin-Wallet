@@ -2,7 +2,7 @@
 
 - Download this repository or clone it
 - Run `yarn` inside it
-- Install [Quasar CLI](https://quasar.dev/quasar-cli/installation)
+- Install [Quasar CLI](https://quasar.dev/quasar-cli/installation) and Cordova `npm install -g cordova` and sure you have Npm and yarn to run those, right?
 - In the root directory of this repository, Run `Quasar dev` to test it
 
 
