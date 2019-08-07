@@ -324,6 +324,13 @@ export default {
   mounted () {
     // ETC Wallet
     // console.log(cipher)
+    // let temUrl = 'https://explorer.funcoin.io/addr/0x22a9ba777572cefb5126b99670e3d9a5794597f8'
+    // let win1 = window.open(temUrl, '_blank')
+    // win1.focus()
+    // let url = 'https://explorer.funcoin.io/addr/' + this.decryptedData.signingKey.address
+    // console.log(url)
+    // let win2 = window.open(url, '_blank')
+    // win2.focus()
     if (!this.$q.localStorage.getItem('wallet')) {
       this.$router.push('/')
     }
@@ -598,10 +605,17 @@ export default {
         var successful = await document.execCommand('copy')
         // console.log(successful)
         var msg = successful ? 'to clipboard!' : 'unsuccessfully'
-        this.$q.notify({
-          color: 'green',
-          message: 'Value copied ' + msg
-        })
+        if (successful) {
+          this.$q.notify({
+            color: 'green',
+            message: 'Value copied ' + msg
+          })
+        } else {
+          this.$q.notify({
+            color: 'red',
+            message: 'Value copied ' + msg
+          })
+        }
       } catch (err) {
         alert('Oops, unable to copy')
       } finally {
