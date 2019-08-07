@@ -596,6 +596,24 @@ export default {
         })
         return
       }
+      if (this.$q.platform.is.ios || this.$q.platform.is.iphone) {
+        var editable = copyTextarea.contentEditable
+        var readOnly = copyTextarea.readOnly
+
+        copyTextarea.contentEditable = true
+        copyTextarea.readOnly = false
+
+        var range = document.createRange()
+        range.selectNodeContents(copyTextarea)
+
+        var selection = window.getSelection()
+        selection.removeAllRanges()
+        selection.addRange(range)
+
+        copyTextarea.setSelectionRange(0, 999999)
+        copyTextarea.contentEditable = editable
+        copyTextarea.readOnly = readOnly
+      }
       // copyTextarea.setAttribute('type', 'text')
       // console.log(copyTextarea)
       copyTextarea.disabled = false
@@ -613,7 +631,7 @@ export default {
         } else {
           this.$q.notify({
             color: 'red',
-            message: 'Value copied ' + msg
+            message: 'Value not copied!'
           })
         }
       } catch (err) {
