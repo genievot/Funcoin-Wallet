@@ -254,7 +254,7 @@
 <q-dialog v-model="showInsertEncryptionPinDialog" persistent>
   <q-card style="min-width: 300px">
     <q-card-section>
-      <div class="text-h6 text-weight-light"> <q-icon color="red" name="warning" /> Deleting your account is irreversable, You sure you want to continue? Make sure you have saved your private key safe. Then enter your pin and click Delte My Accoun Button</div>
+      <div class="text-h6 text-weight-light"> <q-icon color="red" name="warning" /> Deleting your account is irreversable, You sure you want to continue? Make sure you have saved your private key safe. Then enter your pin and click Delete My Accoun Button</div>
     </q-card-section>
 
     <q-card-section>
@@ -264,7 +264,7 @@
         class="q-gutter-md"
       >
       <q-input dense
-         rounded outlined filled type="text"
+         rounded outlined filled label="Pin"
           v-model="encryptionPin" autofocus
           mask= "#-#-#-#"
       >
@@ -599,24 +599,35 @@ export default {
         })
         return
       }
+      var successful = null
       if (this.$q.platform.is.ios || this.$q.platform.is.iphone) {
         this.$q.notify('Ok you are on ios....')
         var editable = copyTextarea.contentEditable
         var readOnly = copyTextarea.readOnly
-
         copyTextarea.contentEditable = true
         copyTextarea.readOnly = false
-
         var range = document.createRange()
         range.selectNodeContents(copyTextarea)
-
         var selection = window.getSelection()
         selection.removeAllRanges()
         selection.addRange(range)
-
         copyTextarea.setSelectionRange(0, 999999)
         copyTextarea.contentEditable = editable
         copyTextarea.readOnly = readOnly
+        successful = await document.execCommand('copy')
+        if (successful) {
+          this.$q.notify({
+            color: 'green',
+            message: 'Value copied successfully'
+          })
+          return
+        } else {
+          this.$q.notify({
+            color: 'red',
+            message: 'Value not copied!'
+          })
+          return
+        }
       }
       // copyTextarea.setAttribute('type', 'text')
       // console.log(copyTextarea)
@@ -624,7 +635,7 @@ export default {
       copyTextarea.focus()
       copyTextarea.select()
       try {
-        var successful = await document.execCommand('copy')
+        successful = await document.execCommand('copy')
         // console.log(successful)
         var msg = successful ? 'to clipboard!' : 'unsuccessfully'
         if (successful) {

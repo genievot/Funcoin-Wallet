@@ -18,7 +18,7 @@
      </q-card-section>
 
      <q-card-actions align="right">
-       <q-btn flat label="Private Key" @click="insertPrivateKeyDialog=true" color="primary" v-close-popup />
+       <q-btn style="cursor: pointer;" flat label="Private Key" @click="insertPrivateKeyDialog=true" color="primary" v-close-popup />
      </q-card-actions>
    </q-card>
  </q-dialog>
@@ -48,8 +48,8 @@
     </q-card-section>
 
     <q-card-actions align="right" class="text-primary">
-      <q-btn flat label="Close" v-close-popup />
-      <q-btn flat label="Add Wallet" type="submit" v-close-popup />
+      <q-btn flat label="Close" style="cursor: pointer;" v-close-popup />
+      <q-btn flat label="Add Wallet" style="cursor: pointer;" type="submit" v-close-popup />
     </q-card-actions>
     </q-form>
   </q-card>
@@ -68,14 +68,14 @@
         class="q-gutter-md"
       >
       <q-input dense :rules="[val => val.length === 7 || 'Field is required']"
-         rounded outlined filled type="text"
+         rounded outlined filled  label="Pin"
           v-model="encryptionPin" autofocus
           mask= "#-#-#-#"
           >
       </q-input>
       <q-card-actions align="right" class="text-primary">
-        <q-btn flat label="Close" v-close-popup />
-        <q-btn class="bg-primary text-white" label="Encrypt Wallet" type="submit" />
+        <q-btn flat label="Close" style="cursor: pointer;" v-close-popup />
+        <q-btn class="bg-primary text-white" style="cursor: pointer;" label="Encrypt Wallet" type="submit" />
     </q-card-actions>
       </q-form>
     </q-card-section>
