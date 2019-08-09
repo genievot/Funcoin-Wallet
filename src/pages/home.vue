@@ -459,6 +459,8 @@ export default {
       this.openCreateCropEtcValueToSpentDialog = false
       let sendingP3CAmount = this.$ethers.utils.parseEther(this.valueToSpend)
       let feeWei = this.$ethers.utils.parseUnits('1.0', 'gwei')
+      console.log(sendingP3CAmount)
+      console.log(feeWei)
 
       let sendfunc = {
         to: this.p3cReceiver.trim(),
@@ -473,9 +475,7 @@ export default {
         console.log(sentfunc)
         this.$q.loading.hide()
         if (sentfunc.hash) {
-          let value = parseInt(sentfunc.value._hex)
-          let etcSpent = this.$ethers.utils.formatEther(value)
-          this.historyTransactions.push({ type: 'Sent FUNC', inFUNC: true, etcSpent: etcSpent, hash: sentfunc.hash })
+          this.historyTransactions.push({ type: 'Sent FUNC', inFUNC: true, etcSpent: this.valueToSpend, hash: sentfunc.hash })
           this.$q.localStorage.set('historyTrxs', this.historyTransactions)
           this.$q.notify({
             message: 'Transaction Successful, Pull to refresh...',
