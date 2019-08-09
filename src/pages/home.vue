@@ -601,7 +601,7 @@ export default {
       }
       var successful = null
       if (this.$q.platform.is.ios || this.$q.platform.is.iphone) {
-        this.$q.notify('Ok you are on ios....')
+        // this.$q.notify('Ok you are on ios....')
         var editable = copyTextarea.contentEditable
         var readOnly = copyTextarea.readOnly
         copyTextarea.contentEditable = true
