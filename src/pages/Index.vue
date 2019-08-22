@@ -1,13 +1,13 @@
 <template>
   <q-page class="bg-white">
     <div class="row justify-center q-mt-sm">
-      <q-btn class="text-white bg-purple-9 q-mt-md" style="width:80vw; cursor: pointer;" @click="createAccount()" align="left" rounded icon="add_circle_outline" label="Create new account" />
+      <q-btn class="text-white bg-purple-9 q-mt-md" style="width:80vw; cursor: pointer; max-width: 500px;" @click="createAccount()" align="left" rounded icon="add_circle_outline" label="Create new account" />
     </div>
     <div class="row justify-center q-mt-md">
-      <q-btn class="text-white bg-red-9" style="width:80vw; cursor: pointer;" @click="importAccountDialog=true" outline rounded align="left" icon="account_circle" label="Import old account" />
+      <q-btn class="text-white bg-red-9" style="width:80vw; cursor: pointer; max-width: 500px;" @click="importAccountDialog=true" outline rounded align="left" icon="account_circle" label="Import old account" />
     </div>
     <div class="row justify-center q-mt-xl">
-      <q-btn class="text-white bg-blue q-mt-md" style="width:60vw; cursor: pointer;" @click="openUrl('https://wallet.funcoin.io/')" rounded align="left" icon="info_outline" label="Web Wallet" />
+      <q-btn class="text-white bg-blue q-mt-md" style="width:60vw; cursor: pointer; max-width: 400px;" @click="openUrl('https://wallet.funcoin.io/')" rounded align="left" icon="info_outline" label="Web Wallet" />
     </div>
 
     <q-dialog v-model="importAccountDialog" persistent>

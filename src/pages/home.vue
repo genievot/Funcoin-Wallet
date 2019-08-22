@@ -85,12 +85,12 @@
   <div v-if='isRegistered'>
   <q-page-sticky position='bottom-left' :offset='[18, 18]'>
     <q-btn fab-mini style="cursor: pointer;" icon='arrow_upward' class='bg-green-8 text-white' @click="showOnlyP3CCropAddress = true" >
-      <q-badge color="green-8" class="q-ma-sm">Deposit</q-badge>
+      <!-- <q-badge color="green-8" class="q-ma-sm">Deposit</q-badge> -->
     </q-btn>
   </q-page-sticky>
   <q-page-sticky position='bottom-right' :offset='[18, 18]'>
     <q-btn fab-mini style="cursor: pointer;" icon='arrow_downward' class='bg-purple-8 text-white' @click="makeTxs('SEND')">
-      <q-badge color="purple-8" class="q-ma-sm">Send</q-badge>
+      <!-- <q-badge color="purple-8" class="q-ma-sm">Send</q-badge> -->
     </q-btn>
   </q-page-sticky>
   </div>
