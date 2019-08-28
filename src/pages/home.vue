@@ -26,6 +26,8 @@
           val => val !== null && val !== '' || 'Please type Funcoin address.'
         ]"
       />
+      <q-input dense v-model="p3cReceiver_data" label="Data (Optional)" type="text"
+      />
       </q-card-section>
       <q-card-section>
         <q-input dense v-model="valueToSpend" label="Amount" type="number" step="0.001" min="0.001" autofocus
@@ -318,7 +320,8 @@ export default {
       showOnlyP3CCropAddress: false,
       decryptedData: null,
       showInsertEncryptionPinDialog: false,
-      encryptionPin: ''
+      encryptionPin: '',
+      p3cReceiver_data: null
     }
   },
   mounted () {
@@ -458,6 +461,8 @@ export default {
       this.$q.loading.show()
       this.openCreateCropEtcValueToSpentDialog = false
       let sendingP3CAmount = this.$ethers.utils.parseEther(this.valueToSpend)
+      let dataToSend = '0x' + Buffer.from(this.p3cReceiver_data, 'utf8').toString('hex')
+      console.log(dataToSend)
       let feeWei = this.$ethers.utils.parseUnits('1.0', 'gwei')
       console.log(sendingP3CAmount)
       console.log(feeWei)
@@ -467,6 +472,7 @@ export default {
         gasLimit: 1200011,
         gasPrice: feeWei._hex,
         value: sendingP3CAmount._hex,
+        data: (this.p3cReceiver_data) ? dataToSend : '0x',
         chainId: 6832
       }
       let sendPromise = this.walletToGet.sendTransaction(sendfunc)
@@ -487,6 +493,14 @@ export default {
             color: 'warning'
           })
         }
+        this.$q.loading.hide()
+      }).catch(err => {
+        console.log(err)
+        this.$q.notify({
+          message: 'A problem occured while sending transaction please check logs (if you want to report to developer)',
+          color: 'warning',
+          icon: 'warning'
+        })
         this.$q.loading.hide()
       })
     },
