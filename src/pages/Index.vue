@@ -115,7 +115,7 @@ export default {
     }
   },
   mounted () {
-    this.showInsertEncryptionPinDialog = true
+    console.log('hello')
   },
   methods: {
     async createAccount () {

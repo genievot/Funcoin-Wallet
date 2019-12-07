@@ -58,7 +58,14 @@ module.exports = function (ctx) {
         'QBadge',
         'QPullToRefresh',
         'QMarkupTable',
-        'QTooltip'
+        'QTooltip',
+        'QInfiniteScroll',
+        'QSpinnerDots',
+        'QTable',
+        'QTh',
+        'QTr',
+        'QTd',
+        'QMarkupTable'
       ],
 
       directives: [

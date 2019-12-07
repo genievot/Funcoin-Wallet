@@ -124,37 +124,29 @@
       transition-show="slide-up"
       transition-hide="slide-down"
     >
-    <q-card class="bg-grey-2 text-green-9">
-      <q-btn dense style="cursor: pointer;" flat icon="close" v-close-popup>
+    <q-card class="bg-grey-4 text-grey-9" align="right">
+      <q-btn dense class="bg-grey-1 q-ma-md" round style="cursor: pointer;" flat icon="close" v-close-popup>
         <q-tooltip content-class="bg-white text-primary">Close</q-tooltip>
       </q-btn>
-      <q-card-section>
-        <div class="text-red-8 bg-grey-2 row justify-center q-mb-sm">
-         <span class="text-h6">Sending Transactions</span>
-        </div>
-    <q-markup-table dark class="bg-green-9">
+      <q-card-section align="center">
+  <div>
+    <q-markup-table separator="none">
       <thead>
         <tr>
+          <th class="text-left">Amount</th>
           <th class="text-left">Type</th>
-          <th class="text-right">Value</th>
-          <th class="text-right">Token</th>
-          <th class="text-left">Hash</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="txs in historyTransactions" :key="txs.hash">
-          <td class="text-left">{{txs.type}}</td>
-          <td class="text-right">{{txs.etcSpent}}</td>
-          <td class="text-right" v-if="txs.inFUNC">FUNC</td>
-          <td class="text-right" v-if="!txs.inFUNC">N/A</td>
-          <td >
-           <q-btn style="cursor: pointer;" round class="text-green-5 bg-grey-1" icon="open_in_new" @click="openHashTxs(txs.hash)">
-           </q-btn>
-          </td>
+        <tr v-for="txs in historyTransactions" :key="txs.blockHash">
+          <td class="text-left">{{txs.amount}}</td>
+          <!-- Using dynamic class for dynamic colors change -->
+          <td :class="`text-left bg-${txs.color} text-white`" @click="openHashTxs(txs.hash)" style="width: 30px">{{txs.type}}</td>
         </tr>
       </tbody>
     </q-markup-table>
-        </q-card-section>
+  </div>
+      </q-card-section>
     </q-card>
   </q-dialog>
  <q-dialog
@@ -321,7 +313,27 @@ export default {
       decryptedData: null,
       showInsertEncryptionPinDialog: false,
       encryptionPin: '',
-      p3cReceiver_data: null
+      p3cReceiver_data: null,
+      txslresults: null,
+      columns_table: [
+        {
+          name: 'amount',
+          label: 'Amount',
+          field: 'amount',
+          align: 'left'
+        },
+        {
+          name: 'type',
+          field: 'type',
+          label: 'Type'
+        }],
+      data_table: [
+        {
+          amount: '10',
+          type: 'SENT',
+          headerClasses: 'bg-primary text-white'
+        }
+      ]
     }
   },
   mounted () {
@@ -361,10 +373,23 @@ export default {
     if (this.$q.platform.is.cordova) {
       window.StatusBar.backgroundColorByHexString('#ffffff')
     }
-    if (this.$q.localStorage.getItem('historyTrxs')) {
-      this.historyTransactions = this.$q.localStorage.getItem('historyTrxs')
-      console.log(this.historyTransactions)
-    }
+    // if (this.$q.localStorage.getItem('historyTrxs')) {
+    //   // this.historyTransactions = this.$q.localStorage.getItem('historyTrxs')
+    //   // console.log(this.historyTransactions)
+    // }
+    this.$axios.get('https://blockscout.funcoin.io/api?module=account&action=txlist&address=' + this.walletSaved.signingKey.address).then((res) => {
+      this.txslresults = res.data.result
+      for (let index = 0; index < this.txslresults.length; index++) {
+        // console.log('-' + this.txslresults[index].from + ',' + this.walletSaved.signingKey.address + '-')
+        if (this.txslresults[index].from.toLowerCase() != this.walletSaved.signingKey.address.toLowerCase()) { // eslint-disable-line
+          // console.log('!-match!!!')
+          this.historyTransactions.push({ amount: this.$ethers.utils.formatEther(this.txslresults[index].value), type: 'Received', color: 'green', hash: this.txslresults[index].hash })
+        } else {
+          // console.log('match!!!')
+          this.historyTransactions.push({ amount: this.$ethers.utils.formatEther(this.txslresults[index].value), type: 'Sent', color: 'red', hash: this.txslresults[index].hash })
+        }
+      }
+    })
     this.$q.loading.show()
     if (!this.$q.localStorage.getItem('overrides') || this.$q.localStorage.getItem('overrides') === null) {
       let wei = this.$ethers.utils.parseEther(this.valueToSpend)
@@ -481,7 +506,7 @@ export default {
         console.log(sentfunc)
         this.$q.loading.hide()
         if (sentfunc.hash) {
-          this.historyTransactions.push({ type: 'Sent FUNC', inFUNC: true, etcSpent: this.valueToSpend, hash: sentfunc.hash })
+          // this.historyTransactions.push({ type: 'Sent FUNC', inFUNC: true, etcSpent: this.valueToSpend, hash: sentfunc.hash })
           this.$q.localStorage.set('historyTrxs', this.historyTransactions)
           this.$q.notify({
             message: 'Transaction Successful, Pull to refresh...',
@@ -593,7 +618,7 @@ export default {
       // }
     },
     openHashTxs (txs) {
-      let url = 'https://explorer.funcoin.io/tx/' + txs
+      let url = 'https://blockscout.funcoin.io//tx/' + txs
       let win = window.open(url, '_blank')
       win.focus()
     },
