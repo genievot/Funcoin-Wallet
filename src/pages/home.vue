@@ -134,7 +134,8 @@
       <thead>
         <tr>
           <th class="text-left">Amount</th>
-          <th class="text-left">Type</th>
+          <th class="text-left">Type (Link)</th>
+          <th class="text-left">Date</th>
         </tr>
       </thead>
       <tbody>
@@ -142,6 +143,7 @@
           <td class="text-left">{{txs.amount}}</td>
           <!-- Using dynamic class for dynamic colors change -->
           <td :class="`text-left bg-${txs.color} text-white`" @click="openHashTxs(txs.hash)" style="width: 30px">{{txs.type}}</td>
+          <td class="text-left">{{txs.date}}</td>
         </tr>
       </tbody>
     </q-markup-table>
@@ -380,13 +382,14 @@ export default {
     this.$axios.get('https://blockscout.funcoin.io/api?module=account&action=txlist&address=' + this.walletSaved.signingKey.address).then((res) => {
       this.txslresults = res.data.result
       for (let index = 0; index < this.txslresults.length; index++) {
-        // console.log('-' + this.txslresults[index].from + ',' + this.walletSaved.signingKey.address + '-')
+        let date = new Date(this.txslresults[index].timeStamp * 1000)
+        console.log(date)
         if (this.txslresults[index].from.toLowerCase() != this.walletSaved.signingKey.address.toLowerCase()) { // eslint-disable-line
           // console.log('!-match!!!')
-          this.historyTransactions.push({ amount: this.$ethers.utils.formatEther(this.txslresults[index].value), type: 'Received', color: 'green', hash: this.txslresults[index].hash })
+          this.historyTransactions.push({ amount: this.$ethers.utils.formatEther(this.txslresults[index].value), type: 'Received', color: 'green', hash: this.txslresults[index].hash, date: date })
         } else {
           // console.log('match!!!')
-          this.historyTransactions.push({ amount: this.$ethers.utils.formatEther(this.txslresults[index].value), type: 'Sent', color: 'red', hash: this.txslresults[index].hash })
+          this.historyTransactions.push({ amount: this.$ethers.utils.formatEther(this.txslresults[index].value), type: 'Sent', color: 'red', hash: this.txslresults[index].hash, date: date })
         }
       }
     })

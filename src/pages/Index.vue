@@ -151,10 +151,10 @@ export default {
       // console.log(walletWithProvider)
 
       this.$router.push('home')
-      console.log(wallet)
+      // console.log(wallet)
     },
     onEncryption () {
-      console.log(this.encryptionPin.length)
+      // console.log(this.encryptionPin.length)
       let pin = this.encryptionPin.trim().replace(/-/g, '')
       this.$q.sessionStorage.set('PinEnr', pin)
       this.encryptionPinProvided = true

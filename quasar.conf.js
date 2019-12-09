@@ -7,7 +7,8 @@ module.exports = function (ctx) {
     boot: [
       'axios',
       'ethers',
-      'cryptojs'
+      'cryptojs',
+      'float_menu'
     ],
 
     css: [
